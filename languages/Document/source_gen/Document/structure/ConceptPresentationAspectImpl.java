@@ -9,13 +9,17 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
+  private ConceptPresentation props_Cell;
   private ConceptPresentation props_Document;
+  private ConceptPresentation props_ICanBeReferenced;
   private ConceptPresentation props_IContentItem;
   private ConceptPresentation props_IHasSubContent;
   private ConceptPresentation props_Image;
   private ConceptPresentation props_ImageFile;
   private ConceptPresentation props_Paragraph;
+  private ConceptPresentation props_Row;
   private ConceptPresentation props_Section;
+  private ConceptPresentation props_Table;
   private ConceptPresentation props_TableOfContents;
 
   @Override
@@ -23,6 +27,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.Cell:
+        if (props_Cell == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Cell");
+          props_Cell = cpb.create();
+        }
+        return props_Cell;
       case LanguageConceptSwitch.Document:
         if (props_Document == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -30,6 +41,12 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Document = cpb.create();
         }
         return props_Document;
+      case LanguageConceptSwitch.ICanBeReferenced:
+        if (props_ICanBeReferenced == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_ICanBeReferenced = cpb.create();
+        }
+        return props_ICanBeReferenced;
       case LanguageConceptSwitch.IContentItem:
         if (props_IContentItem == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -62,6 +79,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Paragraph = cpb.create();
         }
         return props_Paragraph;
+      case LanguageConceptSwitch.Row:
+        if (props_Row == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Row");
+          props_Row = cpb.create();
+        }
+        return props_Row;
       case LanguageConceptSwitch.Section:
         if (props_Section == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -69,6 +93,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Section = cpb.create();
         }
         return props_Section;
+      case LanguageConceptSwitch.Table:
+        if (props_Table == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Table");
+          props_Table = cpb.create();
+        }
+        return props_Table;
       case LanguageConceptSwitch.TableOfContents:
         if (props_TableOfContents == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

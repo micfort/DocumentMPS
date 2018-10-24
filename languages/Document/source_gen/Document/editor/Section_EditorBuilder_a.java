@@ -107,7 +107,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
     }
   }
   private int _StyleParameter_QueryFunction_6s84j_a0a0() {
-    return 28 - Sequence.fromIterable(SNodeOperations.ofConcept(SNodeOperations.getNodeAncestors(getNode(), null, false), MetaAdapterFactory.getInterfaceConcept(0xe9a610efe9344ec5L, 0xaa3d44f7c7af41d2L, 0xfb8026902f8246bL, "Document.structure.IHasSubContent"))).count() * 8;
+    return 28 - Sequence.fromIterable(SNodeOperations.ofConcept(SNodeOperations.getNodeAncestors(getNode(), null, false), MetaAdapterFactory.getInterfaceConcept(0xe9a610efe9344ec5L, 0xaa3d44f7c7af41d2L, 0xfb8026902f8246bL, "Document.structure.IHasSubContent"))).count() * 2;
   }
   private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");

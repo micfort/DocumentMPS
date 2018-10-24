@@ -121,7 +121,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
   private EditorCell createProperty_1() {
     getCellFactory().pushCellContext();
     try {
-      final SProperty property = MetaAdapterFactory.getProperty(0xe9a610efe9344ec5L, 0xaa3d44f7c7af41d2L, 0xfb8026902fb92d0L, 0xfb8026903038c4bL, "caption");
+      final SProperty property = MetaAdapterFactory.getProperty(0xe9a610efe9344ec5L, 0xaa3d44f7c7af41d2L, 0xfb8026902fb92cdL, 0xfb8026903038c4bL, "caption");
       getCellFactory().setPropertyInfo(new SPropertyInfo(myNode, property));
       EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, false, false), myNode);
       editorCell.setDefaultText("<no caption>");

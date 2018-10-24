@@ -12,13 +12,17 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
+  /*package*/ final ConceptDescriptor myConceptCell = createDescriptorForCell();
   /*package*/ final ConceptDescriptor myConceptDocument = createDescriptorForDocument();
+  /*package*/ final ConceptDescriptor myConceptICanBeReferenced = createDescriptorForICanBeReferenced();
   /*package*/ final ConceptDescriptor myConceptIContentItem = createDescriptorForIContentItem();
   /*package*/ final ConceptDescriptor myConceptIHasSubContent = createDescriptorForIHasSubContent();
   /*package*/ final ConceptDescriptor myConceptImage = createDescriptorForImage();
   /*package*/ final ConceptDescriptor myConceptImageFile = createDescriptorForImageFile();
   /*package*/ final ConceptDescriptor myConceptParagraph = createDescriptorForParagraph();
+  /*package*/ final ConceptDescriptor myConceptRow = createDescriptorForRow();
   /*package*/ final ConceptDescriptor myConceptSection = createDescriptorForSection();
+  /*package*/ final ConceptDescriptor myConceptTable = createDescriptorForTable();
   /*package*/ final ConceptDescriptor myConceptTableOfContents = createDescriptorForTableOfContents();
   private final LanguageConceptSwitch myIndexSwitch;
 
@@ -28,15 +32,19 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptDocument, myConceptIContentItem, myConceptIHasSubContent, myConceptImage, myConceptImageFile, myConceptParagraph, myConceptSection, myConceptTableOfContents);
+    return Arrays.asList(myConceptCell, myConceptDocument, myConceptICanBeReferenced, myConceptIContentItem, myConceptIHasSubContent, myConceptImage, myConceptImageFile, myConceptParagraph, myConceptRow, myConceptSection, myConceptTable, myConceptTableOfContents);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
     switch (myIndexSwitch.index(id)) {
+      case LanguageConceptSwitch.Cell:
+        return myConceptCell;
       case LanguageConceptSwitch.Document:
         return myConceptDocument;
+      case LanguageConceptSwitch.ICanBeReferenced:
+        return myConceptICanBeReferenced;
       case LanguageConceptSwitch.IContentItem:
         return myConceptIContentItem;
       case LanguageConceptSwitch.IHasSubContent:
@@ -47,8 +55,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptImageFile;
       case LanguageConceptSwitch.Paragraph:
         return myConceptParagraph;
+      case LanguageConceptSwitch.Row:
+        return myConceptRow;
       case LanguageConceptSwitch.Section:
         return myConceptSection;
+      case LanguageConceptSwitch.Table:
+        return myConceptTable;
       case LanguageConceptSwitch.TableOfContents:
         return myConceptTableOfContents;
       default:
@@ -60,6 +72,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     return myIndexSwitch.index(c);
   }
 
+  private static ConceptDescriptor createDescriptorForCell() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("Document", "Cell", 0xe9a610efe9344ec5L, 0xaa3d44f7c7af41d2L, 0x53b09c58d92e6638L);
+    b.class_(false, false, false);
+    b.origin("r:217cb183-2c99-4254-a51b-ed431c0f427c(Document.structure)/6030491806463845944");
+    b.version(2);
+    b.prop("text", 0x53b09c58d92e6639L, "6030491806463845945");
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForDocument() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("Document", "Document", 0xe9a610efe9344ec5L, 0xaa3d44f7c7af41d2L, 0xfb8026902f82467L);
     b.class_(false, false, true);
@@ -68,6 +88,13 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:217cb183-2c99-4254-a51b-ed431c0f427c(Document.structure)/1132657956328318055");
     b.version(2);
     b.prop("OutputFile", 0xfb8026902fc0726L, "1132657956328572710");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForICanBeReferenced() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("Document", "ICanBeReferenced", 0xe9a610efe9344ec5L, 0xaa3d44f7c7af41d2L, 0x53b09c58d93096e9L);
+    b.interface_();
+    b.origin("r:217cb183-2c99-4254-a51b-ed431c0f427c(Document.structure)/6030491806463989481");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForIContentItem() {
@@ -91,6 +118,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xe9a610efe9344ec5L, 0xaa3d44f7c7af41d2L, 0xfb8026902f8246aL);
     b.origin("r:217cb183-2c99-4254-a51b-ed431c0f427c(Document.structure)/1132657956328542925");
     b.version(2);
+    b.prop("caption", 0xfb8026903038c4bL, "1132657956329065547");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForImageFile() {
@@ -100,7 +128,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:217cb183-2c99-4254-a51b-ed431c0f427c(Document.structure)/1132657956328542928");
     b.version(2);
     b.prop("uri", 0xfb8026902fb92d1L, "1132657956328542929");
-    b.prop("caption", 0xfb8026903038c4bL, "1132657956329065547");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForParagraph() {
@@ -112,6 +139,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.prop("text", 0xfb8026902faad05L, "1132657956328484101");
     return b.create();
   }
+  private static ConceptDescriptor createDescriptorForRow() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("Document", "Row", 0xe9a610efe9344ec5L, 0xaa3d44f7c7af41d2L, 0x53b09c58d92e6637L);
+    b.class_(false, false, false);
+    b.origin("r:217cb183-2c99-4254-a51b-ed431c0f427c(Document.structure)/6030491806463845943");
+    b.version(2);
+    b.aggregate("cells", 0x53b09c58d92e663bL).target(0xe9a610efe9344ec5L, 0xaa3d44f7c7af41d2L, 0x53b09c58d92e6638L).optional(true).ordered(true).multiple(true).origin("6030491806463845947").done();
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForSection() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("Document", "Section", 0xe9a610efe9344ec5L, 0xaa3d44f7c7af41d2L, 0xfb8026902f8247dL);
     b.class_(false, false, false);
@@ -120,6 +155,18 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:217cb183-2c99-4254-a51b-ed431c0f427c(Document.structure)/1132657956328318077");
     b.version(2);
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTable() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("Document", "Table", 0xe9a610efe9344ec5L, 0xaa3d44f7c7af41d2L, 0x53b09c58d92e6634L);
+    b.class_(false, false, false);
+    b.parent(0xe9a610efe9344ec5L, 0xaa3d44f7c7af41d2L, 0xfb8026902f8246aL);
+    b.parent(0xe9a610efe9344ec5L, 0xaa3d44f7c7af41d2L, 0x53b09c58d93096e9L);
+    b.origin("r:217cb183-2c99-4254-a51b-ed431c0f427c(Document.structure)/6030491806463845940");
+    b.version(2);
+    b.prop("caption", 0x53b09c58d93096f1L, "6030491806463989489");
+    b.aggregate("header", 0x53b09c58d92e663fL).target(0xe9a610efe9344ec5L, 0xaa3d44f7c7af41d2L, 0x53b09c58d92e6637L).optional(true).ordered(true).multiple(false).origin("6030491806463845951").done();
+    b.aggregate("rows", 0x53b09c58d92e663dL).target(0xe9a610efe9344ec5L, 0xaa3d44f7c7af41d2L, 0x53b09c58d92e6637L).optional(true).ordered(true).multiple(true).origin("6030491806463845949").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForTableOfContents() {
