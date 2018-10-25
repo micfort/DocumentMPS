@@ -20,6 +20,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptImage = createDescriptorForImage();
   /*package*/ final ConceptDescriptor myConceptImageFile = createDescriptorForImageFile();
   /*package*/ final ConceptDescriptor myConceptParagraph = createDescriptorForParagraph();
+  /*package*/ final ConceptDescriptor myConceptReference = createDescriptorForReference();
   /*package*/ final ConceptDescriptor myConceptRow = createDescriptorForRow();
   /*package*/ final ConceptDescriptor myConceptSection = createDescriptorForSection();
   /*package*/ final ConceptDescriptor myConceptTable = createDescriptorForTable();
@@ -32,7 +33,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptCell, myConceptDocument, myConceptICanBeReferenced, myConceptIContentItem, myConceptIHasSubContent, myConceptImage, myConceptImageFile, myConceptParagraph, myConceptRow, myConceptSection, myConceptTable, myConceptTableOfContents);
+    return Arrays.asList(myConceptCell, myConceptDocument, myConceptICanBeReferenced, myConceptIContentItem, myConceptIHasSubContent, myConceptImage, myConceptImageFile, myConceptParagraph, myConceptReference, myConceptRow, myConceptSection, myConceptTable, myConceptTableOfContents);
   }
 
   @Override
@@ -55,6 +56,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptImageFile;
       case LanguageConceptSwitch.Paragraph:
         return myConceptParagraph;
+      case LanguageConceptSwitch.Reference:
+        return myConceptReference;
       case LanguageConceptSwitch.Row:
         return myConceptRow;
       case LanguageConceptSwitch.Section:
@@ -93,6 +96,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private static ConceptDescriptor createDescriptorForICanBeReferenced() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("Document", "ICanBeReferenced", 0xe9a610efe9344ec5L, 0xaa3d44f7c7af41d2L, 0x53b09c58d93096e9L);
     b.interface_();
+    b.parent(0xd4280a54f6df4383L, 0xaa41d1b2bffa7eb1L, 0x488adb107e2bac88L);
     b.origin("r:217cb183-2c99-4254-a51b-ed431c0f427c(Document.structure)/6030491806463989481");
     b.version(2);
     return b.create();
@@ -116,6 +120,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("Document", "Image", 0xe9a610efe9344ec5L, 0xaa3d44f7c7af41d2L, 0xfb8026902fb92cdL);
     b.class_(false, true, false);
     b.parent(0xe9a610efe9344ec5L, 0xaa3d44f7c7af41d2L, 0xfb8026902f8246aL);
+    b.parent(0xe9a610efe9344ec5L, 0xaa3d44f7c7af41d2L, 0x53b09c58d93096e9L);
     b.origin("r:217cb183-2c99-4254-a51b-ed431c0f427c(Document.structure)/1132657956328542925");
     b.version(2);
     b.prop("caption", 0xfb8026903038c4bL, "1132657956329065547");
@@ -136,7 +141,16 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xe9a610efe9344ec5L, 0xaa3d44f7c7af41d2L, 0xfb8026902f8246aL);
     b.origin("r:217cb183-2c99-4254-a51b-ed431c0f427c(Document.structure)/1132657956328484098");
     b.version(2);
-    b.prop("text", 0xfb8026902faad05L, "1132657956328484101");
+    b.aggregate("text", 0x288f85bc880a990fL).target(0x92d2ea165a424fdfL, 0xa676c7604efe3504L, 0x237c8da86a9e4e61L).optional(false).ordered(true).multiple(false).origin("2922701727969483023").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForReference() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("Document", "Reference", 0xe9a610efe9344ec5L, 0xaa3d44f7c7af41d2L, 0x288f85bc880edab1L);
+    b.class_(false, false, false);
+    b.parent(0x92d2ea165a424fdfL, 0xa676c7604efe3504L, 0x237c8da86a9e7aecL);
+    b.origin("r:217cb183-2c99-4254-a51b-ed431c0f427c(Document.structure)/2922701727969761969");
+    b.version(2);
+    b.associate("ref", 0x288f85bc880edab6L).target(0xe9a610efe9344ec5L, 0xaa3d44f7c7af41d2L, 0x53b09c58d93096e9L).optional(false).origin("2922701727969761974").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForRow() {

@@ -8,6 +8,14 @@
   </languages>
   <imports />
   <registry>
+    <language id="92d2ea16-5a42-4fdf-a676-c7604efe3504" name="de.slisson.mps.richtext">
+      <concept id="2557074442922380897" name="de.slisson.mps.richtext.structure.Text" flags="ng" index="19SGf9">
+        <child id="2557074442922392302" name="words" index="19SJt6" />
+      </concept>
+      <concept id="2557074442922438156" name="de.slisson.mps.richtext.structure.Word" flags="ng" index="19SUe$">
+        <property id="2557074442922438158" name="escapedValue" index="19SUeA" />
+      </concept>
+    </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
@@ -32,7 +40,7 @@
       </concept>
       <concept id="1132657956328318077" name="Document.structure.Section" flags="ng" index="dg2ok" />
       <concept id="1132657956328484098" name="Document.structure.Paragraph" flags="ng" index="dgEXF">
-        <property id="1132657956328484101" name="text" index="dgEXG" />
+        <child id="2922701727969483023" name="text" index="2wxhMN" />
       </concept>
       <concept id="1132657956328542925" name="Document.structure.Image" flags="ng" index="dgT2$">
         <property id="1132657956329065547" name="caption" index="cISSy" />
@@ -40,44 +48,57 @@
       <concept id="1132657956328542928" name="Document.structure.ImageFile" flags="ng" index="dgT2T">
         <property id="1132657956328542929" name="uri" index="dgT2S" />
       </concept>
-    </language>
-    <language id="f8f68d92-c6d2-44b3-8d63-c00ade75ec86" name="com.mbeddr.doc.latex">
-      <concept id="4457500422381350412" name="com.mbeddr.doc.latex.structure.LatexDocument" flags="ng" index="1jVps8">
-        <property id="4457500422381350415" name="documentClass" index="1jVpsb" />
-        <child id="4457500422381350435" name="contents" index="1jVpsB" />
+      <concept id="2922701727969761969" name="Document.structure.Reference" flags="ng" index="2wwlWd">
+        <reference id="2922701727969761974" name="ref" index="2wwlWa" />
       </concept>
-      <concept id="4457500422381364312" name="com.mbeddr.doc.latex.structure.WordLine" flags="ng" index="1jVtPs">
-        <child id="4457500422381364317" name="words" index="1jVtPp" />
-      </concept>
-      <concept id="4457500422381364333" name="com.mbeddr.doc.latex.structure.CommandWord" flags="ng" index="1jVtPD" />
-      <concept id="4457500422381362355" name="com.mbeddr.doc.latex.structure.LineList" flags="ng" index="1jVumR" />
     </language>
   </registry>
-  <node concept="1jVps8" id="YS0A$2Zuun">
-    <property role="TrG5h" value="test" />
-    <property role="1jVpsb" value="article" />
-    <node concept="1jVtPs" id="YS0A$2Zuuq" role="1jVpsB">
-      <node concept="1jVtPD" id="YS0A$2Zuus" role="1jVtPp" />
-    </node>
-    <node concept="1jVumR" id="YS0A$30oik" role="1jVpsB" />
-  </node>
   <node concept="dg2oe" id="5eKB5zpe8W9">
     <property role="TrG5h" value="testdocument" />
     <property role="dh0lf" value="testdocument" />
-    <node concept="dgEXF" id="5eKB5zpeW95" role="dg2rb">
-      <property role="dgEXG" value="This is a test document" />
+    <node concept="dgEXF" id="2yfxrM83Bw5" role="dg2rb">
+      <node concept="19SGf9" id="2yfxrM83Bw7" role="2wxhMN">
+        <node concept="19SUe$" id="2yfxrM83Bw8" role="19SJt6">
+          <property role="19SUeA" value="hallo this is an introduction" />
+        </node>
+      </node>
     </node>
     <node concept="dg2ok" id="5eKB5zpeW9p" role="dg2rb">
-      <property role="TrG5h" value="Chapter 1" />
-      <node concept="dgEXF" id="5eKB5zpeW9t" role="dg2rb">
-        <property role="dgEXG" value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum mi a erat congue, sit amet aliquam sem tincidunt. Fusce quis venenatis mauris. Donec pellentesque nisl vel pharetra eleifend. Vestibulum fringilla ac erat at varius. Nullam semper ultrices orci vel tristique. Morbi sagittis consequat quam vitae consectetur. Donec eget nulla aliquam, porta lacus non, gravida enim. Donec ac massa egestas nulla gravida faucibus vel eu velit. Vestibulum aliquam nulla vel odio mollis, a eleifend mauris placerat. Curabitur eget iaculis felis, ut molestie nulla. Duis sodales, tortor a convallis pulvinar, metus nunc consectetur nisl, non efficitur dui ligula sed arcu. Pellentesque mollis nibh nec urna iaculis vulputate et volutpat orci. Nullam sollicitudin, mi a dictum rutrum, nisi justo consectetur arcu, vel fermentum lacus dui ac erat. Suspendisse nec tellus tortor. Suspendisse potenti. Cras tempor bibendum vulputate." />
+      <property role="TrG5h" value="Chater 1: something interesting" />
+      <node concept="dgEXF" id="2yfxrM83BzI" role="dg2rb">
+        <node concept="19SGf9" id="2yfxrM83BzK" role="2wxhMN">
+          <node concept="19SUe$" id="2yfxrM83BzL" role="19SJt6">
+            <property role="19SUeA" value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum mi a erat congue, sit amet aliquam sem tincidunt. Fusce quis venenatis mauris. Donec pellentesque nisl vel pharetra eleifend. Vestibulum fringilla ac erat at varius. Nullam semper ultrices orci vel tristique. Morbi sagittis consequat quam vitae consectetur. Donec eget nulla aliquam, porta lacus non, gravida enim. Donec ac massa egestas nulla gravida faucibus vel eu velit. Vestibulum aliquam nulla vel odio mollis, a eleifend mauris placerat. Curabitur eget iaculis felis, ut molestie nulla. Duis sodales, tortor a convallis pulvinar, metus nunc consectetur nisl, non efficitur dui ligula sed arcu. Pellentesque mollis nibh nec urna iaculis vulputate et volutpat orci. Nullam sollicitudin, mi a dictum rutrum, nisi justo consectetur arcu, vel fermentum lacus dui ac erat. Suspendisse nec tellus tortor. Suspendisse potenti. Cras tempor bibendum vulputate." />
+          </node>
+        </node>
+      </node>
+      <node concept="dgEXF" id="2yfxrM83Unw" role="dg2rb">
+        <node concept="19SGf9" id="2yfxrM83Uny" role="2wxhMN">
+          <node concept="19SUe$" id="2yfxrM83Unz" role="19SJt6">
+            <property role="19SUeA" value="hello" />
+          </node>
+          <node concept="2wwlWd" id="2yfxrM83Uor" role="19SJt6">
+            <ref role="2wwlWa" node="5eKB5zpeW9y" resolve="cat" />
+          </node>
+          <node concept="19SUe$" id="2yfxrM83Uos" role="19SJt6">
+            <property role="19SUeA" value="asfdfsd blub hallo ik ben gek " />
+          </node>
+          <node concept="2wwlWd" id="2yfxrM84$Fa" role="19SJt6">
+            <ref role="2wwlWa" node="5eKB5zpeW9E" resolve="some table" />
+          </node>
+          <node concept="19SUe$" id="2yfxrM84$Fb" role="19SJt6">
+            <property role="19SUeA" value="en dit is een test" />
+          </node>
+        </node>
       </node>
       <node concept="dgT2T" id="5eKB5zpeW9y" role="dg2rb">
         <property role="dgT2S" value="cat.jpeg" />
         <property role="cISSy" value="cat image" />
+        <property role="TrG5h" value="cat" />
       </node>
       <node concept="2aBJDG" id="5eKB5zpeW9E" role="dg2rb">
         <property role="2aw0ED" value="some caption" />
+        <property role="TrG5h" value="some table" />
         <node concept="2aBJDJ" id="5eKB5zpeW9J" role="2aBJD_">
           <node concept="2aBJDw" id="5eKB5zpeW9L" role="2aBJDz">
             <property role="2aBJDx" value="a" />
@@ -97,15 +118,23 @@
       </node>
       <node concept="dg2ok" id="5eKB5zpeWaa" role="dg2rb">
         <property role="TrG5h" value="subchapter" />
-        <node concept="dgEXF" id="5eKB5zpf5GI" role="dg2rb">
-          <property role="dgEXG" value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum mi a erat congue, sit amet aliquam sem tincidunt. Fusce quis venenatis mauris. Donec pellentesque nisl vel pharetra eleifend. Vestibulum fringilla ac erat at varius. Nullam semper ultrices orci vel tristique. Morbi sagittis consequat quam vitae consectetur. Donec eget nulla aliquam, porta lacus non, gravida enim. Donec ac massa egestas nulla gravida faucibus vel eu velit. Vestibulum aliquam nulla vel odio mollis, a eleifend mauris placerat. Curabitur eget iaculis felis, ut molestie nulla. Duis sodales, tortor a convallis pulvinar, metus nunc consectetur nisl, non efficitur dui ligula sed arcu. Pellentesque mollis nibh nec urna iaculis vulputate et volutpat orci. Nullam sollicitudin, mi a dictum rutrum, nisi justo consectetur arcu, vel fermentum lacus dui ac erat. Suspendisse nec tellus tortor. Suspendisse potenti. Cras tempor bibendum vulputate." />
+        <node concept="dgEXF" id="2yfxrM83B$w" role="dg2rb">
+          <node concept="19SGf9" id="2yfxrM83B$x" role="2wxhMN">
+            <node concept="19SUe$" id="2yfxrM83B$y" role="19SJt6">
+              <property role="19SUeA" value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum mi a erat congue, sit amet aliquam sem tincidunt. Fusce quis venenatis mauris. Donec pellentesque nisl vel pharetra eleifend. Vestibulum fringilla ac erat at varius. Nullam semper ultrices orci vel tristique. Morbi sagittis consequat quam vitae consectetur. Donec eget nulla aliquam, porta lacus non, gravida enim. Donec ac massa egestas nulla gravida faucibus vel eu velit. Vestibulum aliquam nulla vel odio mollis, a eleifend mauris placerat. Curabitur eget iaculis felis, ut molestie nulla. Duis sodales, tortor a convallis pulvinar, metus nunc consectetur nisl, non efficitur dui ligula sed arcu. Pellentesque mollis nibh nec urna iaculis vulputate et volutpat orci. Nullam sollicitudin, mi a dictum rutrum, nisi justo consectetur arcu, vel fermentum lacus dui ac erat. Suspendisse nec tellus tortor. Suspendisse potenti. Cras tempor bibendum vulputate." />
+            </node>
+          </node>
         </node>
       </node>
     </node>
     <node concept="dg2ok" id="5eKB5zpf5Gt" role="dg2rb">
       <property role="TrG5h" value="chapter 2" />
-      <node concept="dgEXF" id="5eKB5zpf5GG" role="dg2rb">
-        <property role="dgEXG" value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum mi a erat congue, sit amet aliquam sem tincidunt. Fusce quis venenatis mauris. Donec pellentesque nisl vel pharetra eleifend. Vestibulum fringilla ac erat at varius. Nullam semper ultrices orci vel tristique. Morbi sagittis consequat quam vitae consectetur. Donec eget nulla aliquam, porta lacus non, gravida enim. Donec ac massa egestas nulla gravida faucibus vel eu velit. Vestibulum aliquam nulla vel odio mollis, a eleifend mauris placerat. Curabitur eget iaculis felis, ut molestie nulla. Duis sodales, tortor a convallis pulvinar, metus nunc consectetur nisl, non efficitur dui ligula sed arcu. Pellentesque mollis nibh nec urna iaculis vulputate et volutpat orci. Nullam sollicitudin, mi a dictum rutrum, nisi justo consectetur arcu, vel fermentum lacus dui ac erat. Suspendisse nec tellus tortor. Suspendisse potenti. Cras tempor bibendum vulputate." />
+      <node concept="dgEXF" id="2yfxrM83B$K" role="dg2rb">
+        <node concept="19SGf9" id="2yfxrM83B$M" role="2wxhMN">
+          <node concept="19SUe$" id="2yfxrM83B$N" role="19SJt6">
+            <property role="19SUeA" value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum mi a erat congue, sit amet aliquam sem tincidunt. Fusce quis venenatis mauris. Donec pellentesque nisl vel pharetra eleifend. Vestibulum fringilla ac erat at varius. Nullam semper ultrices orci vel tristique. Morbi sagittis consequat quam vitae consectetur. Donec eget nulla aliquam, porta lacus non, gravida enim. Donec ac massa egestas nulla gravida faucibus vel eu velit. Vestibulum aliquam nulla vel odio mollis, a eleifend mauris placerat. Curabitur eget iaculis felis, ut molestie nulla. Duis sodales, tortor a convallis pulvinar, metus nunc consectetur nisl, non efficitur dui ligula sed arcu. Pellentesque mollis nibh nec urna iaculis vulputate et volutpat orci. Nullam sollicitudin, mi a dictum rutrum, nisi justo consectetur arcu, vel fermentum lacus dui ac erat. Suspendisse nec tellus tortor. Suspendisse potenti. Cras tempor bibendum vulputate." />
+          </node>
+        </node>
       </node>
     </node>
   </node>

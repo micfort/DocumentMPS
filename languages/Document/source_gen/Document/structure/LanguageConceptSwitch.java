@@ -17,10 +17,11 @@ public final class LanguageConceptSwitch {
   public static final int Image = 5;
   public static final int ImageFile = 6;
   public static final int Paragraph = 7;
-  public static final int Row = 8;
-  public static final int Section = 9;
-  public static final int Table = 10;
-  public static final int TableOfContents = 11;
+  public static final int Reference = 8;
+  public static final int Row = 9;
+  public static final int Section = 10;
+  public static final int Table = 11;
+  public static final int TableOfContents = 12;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0xe9a610efe9344ec5L, 0xaa3d44f7c7af41d2L);
@@ -32,6 +33,7 @@ public final class LanguageConceptSwitch {
     builder.put(0xfb8026902fb92cdL, Image);
     builder.put(0xfb8026902fb92d0L, ImageFile);
     builder.put(0xfb8026902faad02L, Paragraph);
+    builder.put(0x288f85bc880edab1L, Reference);
     builder.put(0x53b09c58d92e6637L, Row);
     builder.put(0xfb8026902f8247dL, Section);
     builder.put(0x53b09c58d92e6634L, Table);

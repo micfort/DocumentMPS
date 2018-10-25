@@ -17,6 +17,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_Image;
   private ConceptPresentation props_ImageFile;
   private ConceptPresentation props_Paragraph;
+  private ConceptPresentation props_Reference;
   private ConceptPresentation props_Row;
   private ConceptPresentation props_Section;
   private ConceptPresentation props_Table;
@@ -68,7 +69,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ImageFile:
         if (props_ImageFile == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("ImageFile");
+          cpb.presentationByName();
           props_ImageFile = cpb.create();
         }
         return props_ImageFile;
@@ -79,6 +80,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Paragraph = cpb.create();
         }
         return props_Paragraph;
+      case LanguageConceptSwitch.Reference:
+        if (props_Reference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xe9a610efe9344ec5L, 0xaa3d44f7c7af41d2L, 0x288f85bc880edab1L, 0x288f85bc880edab6L, "ref", "", "");
+          props_Reference = cpb.create();
+        }
+        return props_Reference;
       case LanguageConceptSwitch.Row:
         if (props_Row == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -96,7 +104,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Table:
         if (props_Table == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("Table");
+          cpb.presentationByName();
           props_Table = cpb.create();
         }
         return props_Table;

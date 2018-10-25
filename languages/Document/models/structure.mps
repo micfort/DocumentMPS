@@ -6,6 +6,8 @@
     <devkit ref="78434eb8-b0e5-444b-850d-e7c4ad2da9ab(jetbrains.mps.devkit.aspect.structure)" />
   </languages>
   <imports>
+    <import index="vs0r" ref="r:f7764ca4-8c75-4049-922b-08516400a727(com.mbeddr.core.base.structure)" />
+    <import index="87nw" ref="r:ca2ab6bb-f6e7-4c0f-a88c-b78b9b31fff3(de.slisson.mps.richtext.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -17,7 +19,9 @@
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
-      <concept id="1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" flags="ig" index="PlHQZ" />
+      <concept id="1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" flags="ig" index="PlHQZ">
+        <child id="1169127546356" name="extends" index="PrDN$" />
+      </concept>
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
@@ -102,10 +106,12 @@
     <node concept="PrWs8" id="YS0A$2YEO3" role="PzmwI">
       <ref role="PrY4T" node="YS0A$2Y2hE" resolve="IContentItem" />
     </node>
-    <node concept="1TJgyi" id="YS0A$2YEO5" role="1TKVEl">
-      <property role="IQ2nx" value="1132657956328484101" />
-      <property role="TrG5h" value="text" />
-      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    <node concept="1TJgyj" id="2yfxrM82D$f" role="1TKVEi">
+      <property role="IQ2ns" value="2922701727969483023" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="text" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" to="87nw:2dWzqxEB$Tx" resolve="Text" />
     </node>
   </node>
   <node concept="1TIwiD" id="YS0A$2YTbd">
@@ -122,6 +128,9 @@
     </node>
     <node concept="PrWs8" id="YS0A$2YTbe" role="PzmwI">
       <ref role="PrY4T" node="YS0A$2Y2hE" resolve="IContentItem" />
+    </node>
+    <node concept="PrWs8" id="7MDyUme0cBq" role="PzmwI">
+      <ref role="PrY4T" node="5eKB5zpc9rD" resolve="ICanBeReferenced" />
     </node>
   </node>
   <node concept="1TIwiD" id="YS0A$2YTbg">
@@ -202,6 +211,25 @@
     <property role="EcuMT" value="6030491806463989481" />
     <property role="3GE5qa" value="content" />
     <property role="TrG5h" value="ICanBeReferenced" />
+    <node concept="PrWs8" id="2yfxrM842qQ" role="PrDN$">
+      <ref role="PrY4T" to="vs0r:4yaQL1YaUM8" resolve="IHasQualifiedName" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="2yfxrM83HEL">
+    <property role="EcuMT" value="2922701727969761969" />
+    <property role="3GE5qa" value="content" />
+    <property role="TrG5h" value="Reference" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="2yfxrM83HEM" role="PzmwI">
+      <ref role="PrY4T" to="87nw:2dWzqxEBBFG" resolve="IWord" />
+    </node>
+    <node concept="1TJgyj" id="2yfxrM83HEQ" role="1TKVEi">
+      <property role="IQ2ns" value="2922701727969761974" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="ref" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="5eKB5zpc9rD" resolve="ICanBeReferenced" />
+    </node>
   </node>
 </model>
 

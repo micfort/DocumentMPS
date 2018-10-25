@@ -5,12 +5,13 @@ package main;
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.impl.query.QueryProviderBase;
 import jetbrains.mps.generator.template.PropertyMacroContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import de.slisson.mps.richtext.behavior.Text__BehaviorDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -34,7 +35,7 @@ public class QueriesGenerated extends QueryProviderBase {
     super(1);
   }
   public static Object propertyMacro_GetValue_0_0(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xe9a610efe9344ec5L, 0xaa3d44f7c7af41d2L, 0xfb8026902faad02L, 0xfb8026902faad05L, "text"));
+    return (String) Text__BehaviorDescriptor.asTextString_id3Q5enzfMT4l.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xe9a610efe9344ec5L, 0xaa3d44f7c7af41d2L, 0xfb8026902faad02L, 0x288f85bc880a990fL, "text")));
   }
   public static Object propertyMacro_GetValue_0_1(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
@@ -68,7 +69,7 @@ public class QueriesGenerated extends QueryProviderBase {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xe9a610efe9344ec5L, 0xaa3d44f7c7af41d2L, 0xfb8026902fb92cdL, 0xfb8026903038c4bL, "caption"));
   }
   public static Object propertyMacro_GetValue_0_5(final PropertyMacroContext _context) {
-    return _context.createUniqueName("figure", _context.getNode());
+    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
   public static Object propertyMacro_GetValue_0_6(final PropertyMacroContext _context) {
     StringBuilder sb = new StringBuilder();
@@ -83,7 +84,7 @@ public class QueriesGenerated extends QueryProviderBase {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xe9a610efe9344ec5L, 0xaa3d44f7c7af41d2L, 0x53b09c58d92e6634L, 0x53b09c58d93096f1L, "caption"));
   }
   public static Object propertyMacro_GetValue_0_8(final PropertyMacroContext _context) {
-    return _context.createUniqueName("table", _context.getNode());
+    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
   public static Object propertyMacro_GetValue_0_9(final PropertyMacroContext _context) {
     StringBuilder sb = new StringBuilder();
