@@ -9,35 +9,25 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public final class LanguageConceptSwitch {
   private final LanguageConceptIndex myIndex;
-  public static final int Cell = 0;
-  public static final int Document = 1;
-  public static final int ICanBeReferenced = 2;
-  public static final int IContentItem = 3;
-  public static final int IHasSubContent = 4;
-  public static final int Image = 5;
-  public static final int ImageFile = 6;
-  public static final int Paragraph = 7;
-  public static final int Reference = 8;
-  public static final int Row = 9;
-  public static final int Section = 10;
-  public static final int Table = 11;
-  public static final int TableOfContents = 12;
+  public static final int Document = 0;
+  public static final int IContentItem = 1;
+  public static final int IHasSubContent = 2;
+  public static final int IHeaderItem = 3;
+  public static final int RawLatex = 4;
+  public static final int RawLatexLine = 5;
+  public static final int RawLatexWord = 6;
+  public static final int RawLatexWords = 7;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0xe9a610efe9344ec5L, 0xaa3d44f7c7af41d2L);
-    builder.put(0x53b09c58d92e6638L, Cell);
     builder.put(0xfb8026902f82467L, Document);
-    builder.put(0x53b09c58d93096e9L, ICanBeReferenced);
     builder.put(0xfb8026902f8246aL, IContentItem);
     builder.put(0xfb8026902f8246bL, IHasSubContent);
-    builder.put(0xfb8026902fb92cdL, Image);
-    builder.put(0xfb8026902fb92d0L, ImageFile);
-    builder.put(0xfb8026902faad02L, Paragraph);
-    builder.put(0x288f85bc880edab1L, Reference);
-    builder.put(0x53b09c58d92e6637L, Row);
-    builder.put(0xfb8026902f8247dL, Section);
-    builder.put(0x53b09c58d92e6634L, Table);
-    builder.put(0xfb80269030445caL, TableOfContents);
+    builder.put(0x2b10c2e2d38c41b6L, IHeaderItem);
+    builder.put(0x2b10c2e2d388fdd9L, RawLatex);
+    builder.put(0x2b10c2e2d3897aa7L, RawLatexLine);
+    builder.put(0x2b10c2e2d3897aa8L, RawLatexWord);
+    builder.put(0x2b10c2e2d38f3debL, RawLatexWords);
     myIndex = builder.seal();
   }
 

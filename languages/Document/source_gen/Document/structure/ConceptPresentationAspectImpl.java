@@ -9,32 +9,20 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private ConceptPresentation props_Cell;
   private ConceptPresentation props_Document;
-  private ConceptPresentation props_ICanBeReferenced;
   private ConceptPresentation props_IContentItem;
   private ConceptPresentation props_IHasSubContent;
-  private ConceptPresentation props_Image;
-  private ConceptPresentation props_ImageFile;
-  private ConceptPresentation props_Paragraph;
-  private ConceptPresentation props_Reference;
-  private ConceptPresentation props_Row;
-  private ConceptPresentation props_Section;
-  private ConceptPresentation props_Table;
-  private ConceptPresentation props_TableOfContents;
+  private ConceptPresentation props_IHeaderItem;
+  private ConceptPresentation props_RawLatex;
+  private ConceptPresentation props_RawLatexLine;
+  private ConceptPresentation props_RawLatexWord;
+  private ConceptPresentation props_RawLatexWords;
 
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case LanguageConceptSwitch.Cell:
-        if (props_Cell == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("Cell");
-          props_Cell = cpb.create();
-        }
-        return props_Cell;
       case LanguageConceptSwitch.Document:
         if (props_Document == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -42,12 +30,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Document = cpb.create();
         }
         return props_Document;
-      case LanguageConceptSwitch.ICanBeReferenced:
-        if (props_ICanBeReferenced == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          props_ICanBeReferenced = cpb.create();
-        }
-        return props_ICanBeReferenced;
       case LanguageConceptSwitch.IContentItem:
         if (props_IContentItem == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -60,61 +42,40 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_IHasSubContent = cpb.create();
         }
         return props_IHasSubContent;
-      case LanguageConceptSwitch.Image:
-        if (props_Image == null) {
+      case LanguageConceptSwitch.IHeaderItem:
+        if (props_IHeaderItem == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          props_Image = cpb.create();
+          props_IHeaderItem = cpb.create();
         }
-        return props_Image;
-      case LanguageConceptSwitch.ImageFile:
-        if (props_ImageFile == null) {
+        return props_IHeaderItem;
+      case LanguageConceptSwitch.RawLatex:
+        if (props_RawLatex == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.presentationByName();
-          props_ImageFile = cpb.create();
+          cpb.rawPresentation("RawLatex");
+          props_RawLatex = cpb.create();
         }
-        return props_ImageFile;
-      case LanguageConceptSwitch.Paragraph:
-        if (props_Paragraph == null) {
+        return props_RawLatex;
+      case LanguageConceptSwitch.RawLatexLine:
+        if (props_RawLatexLine == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("Paragraph");
-          props_Paragraph = cpb.create();
+          cpb.rawPresentation("RawLatexLine");
+          props_RawLatexLine = cpb.create();
         }
-        return props_Paragraph;
-      case LanguageConceptSwitch.Reference:
-        if (props_Reference == null) {
+        return props_RawLatexLine;
+      case LanguageConceptSwitch.RawLatexWord:
+        if (props_RawLatexWord == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.presentationByReference(0xe9a610efe9344ec5L, 0xaa3d44f7c7af41d2L, 0x288f85bc880edab1L, 0x288f85bc880edab6L, "ref", "", "");
-          props_Reference = cpb.create();
+          cpb.rawPresentation("RawLatexWord");
+          props_RawLatexWord = cpb.create();
         }
-        return props_Reference;
-      case LanguageConceptSwitch.Row:
-        if (props_Row == null) {
+        return props_RawLatexWord;
+      case LanguageConceptSwitch.RawLatexWords:
+        if (props_RawLatexWords == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("Row");
-          props_Row = cpb.create();
+          cpb.rawPresentation("RawLatexWords");
+          props_RawLatexWords = cpb.create();
         }
-        return props_Row;
-      case LanguageConceptSwitch.Section:
-        if (props_Section == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.presentationByName();
-          props_Section = cpb.create();
-        }
-        return props_Section;
-      case LanguageConceptSwitch.Table:
-        if (props_Table == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.presentationByName();
-          props_Table = cpb.create();
-        }
-        return props_Table;
-      case LanguageConceptSwitch.TableOfContents:
-        if (props_TableOfContents == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("TableOfContents");
-          props_TableOfContents = cpb.create();
-        }
-        return props_TableOfContents;
+        return props_RawLatexWords;
     }
     return null;
   }

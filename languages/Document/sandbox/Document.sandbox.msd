@@ -8,6 +8,7 @@
   <sourcePath />
   <languageVersions>
     <language slang="l:e9a610ef-e934-4ec5-aa3d-44f7c7af41d2:Document" version="0" />
+    <language slang="l:968b0938-0d4f-4b45-9c47-d86e2dddb74b:Document.Basics" version="0" />
     <language slang="l:d4280a54-f6df-4383-aa41-d1b2bffa7eb1:com.mbeddr.core.base" version="5" />
     <language slang="l:f8f68d92-c6d2-44b3-8d63-c00ade75ec86:com.mbeddr.doc.latex" version="0" />
     <language slang="l:63e0e566-5131-447e-90e3-12ea330e1a00:com.mbeddr.mpsutil.blutil" version="1" />
