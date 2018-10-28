@@ -39,6 +39,12 @@
       <concept id="1132657956328542928" name="Document.Basics.structure.ImageFile" flags="ng" index="dgT2T">
         <property id="1132657956328542929" name="uri" index="dgT2S" />
       </concept>
+      <concept id="3431107473655900731" name="Document.Basics.structure.UsePackage" flags="ng" index="2AVLgE">
+        <property id="3431107473655900732" name="package" index="2AVLgH" />
+      </concept>
+      <concept id="3103194422726319464" name="Document.Basics.structure.UsePackages" flags="ng" index="3SwTYa">
+        <child id="3431107473655900729" name="package" index="2AVLgC" />
+      </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -51,6 +57,7 @@
       </concept>
       <concept id="1132657956328318055" name="Document.structure.Document" flags="ng" index="dg2oe">
         <property id="1132657956328572710" name="OutputFile" index="dh0lf" />
+        <child id="3103194422725853625" name="headers" index="3SB8dr" />
       </concept>
     </language>
   </registry>
@@ -118,6 +125,11 @@
             <property role="19SUeA" value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum mi a erat congue, sit amet aliquam sem tincidunt. Fusce quis venenatis mauris. Donec pellentesque nisl vel pharetra eleifend. Vestibulum fringilla ac erat at varius. Nullam semper ultrices orci vel tristique. Morbi sagittis consequat quam vitae consectetur. Donec eget nulla aliquam, porta lacus non, gravida enim. Donec ac massa egestas nulla gravida faucibus vel eu velit. Vestibulum aliquam nulla vel odio mollis, a eleifend mauris placerat. Curabitur eget iaculis felis, ut molestie nulla. Duis sodales, tortor a convallis pulvinar, metus nunc consectetur nisl, non efficitur dui ligula sed arcu. Pellentesque mollis nibh nec urna iaculis vulputate et volutpat orci. Nullam sollicitudin, mi a dictum rutrum, nisi justo consectetur arcu, vel fermentum lacus dui ac erat. Suspendisse nec tellus tortor. Suspendisse potenti. Cras tempor bibendum vulputate." />
           </node>
         </node>
+      </node>
+    </node>
+    <node concept="3SwTYa" id="2YtJx69tNYd" role="3SB8dr">
+      <node concept="2AVLgE" id="2YtJx69tNYm" role="2AVLgC">
+        <property role="2AVLgH" value="graphicx" />
       </node>
     </node>
   </node>

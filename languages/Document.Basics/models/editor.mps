@@ -68,6 +68,7 @@
         <child id="1225900141900" name="modelAccessor" index="1HlULh" />
       </concept>
       <concept id="1176717841777" name="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter" flags="in" index="3TQlhw" />
+      <concept id="1198256887712" name="jetbrains.mps.lang.editor.structure.CellModel_Indent" flags="ng" index="3XFhqQ" />
       <concept id="1166049232041" name="jetbrains.mps.lang.editor.structure.AbstractComponent" flags="ng" index="1XWOmA">
         <reference id="1166049300910" name="conceptDeclaration" index="1XX52x" />
       </concept>
@@ -368,15 +369,38 @@
     </node>
   </node>
   <node concept="24kQdi" id="2GgKIbj$PQ6">
-    <ref role="1XX52x" to="8ny5:2GgKIbj$PPC" resolve="UsePackage" />
-    <node concept="3EZMnI" id="2GgKIbj$PQ8" role="2wV5jI">
-      <node concept="3F0ifn" id="2GgKIbj$PQf" role="3EZMnx">
-        <property role="3F0ifm" value="use package" />
+    <property role="3GE5qa" value="header" />
+    <ref role="1XX52x" to="8ny5:2GgKIbj$PPC" resolve="UsePackages" />
+    <node concept="3EZMnI" id="2YtJx69sEWS" role="2wV5jI">
+      <node concept="2iRkQZ" id="2YtJx69sEWT" role="2iSdaV" />
+      <node concept="3EZMnI" id="2GgKIbj$PQ8" role="3EZMnx">
+        <node concept="3F0ifn" id="2GgKIbj$PQf" role="3EZMnx">
+          <property role="3F0ifm" value="use packages:" />
+        </node>
+        <node concept="2iRfu4" id="2GgKIbj$PQb" role="2iSdaV" />
       </node>
-      <node concept="3F0A7n" id="2GgKIbj$PQl" role="3EZMnx">
-        <ref role="1NtTu8" to="8ny5:2GgKIbj$PPF" resolve="name" />
+      <node concept="3EZMnI" id="2YtJx69sEXj" role="3EZMnx">
+        <node concept="3XFhqQ" id="2YtJx69u9VM" role="3EZMnx" />
+        <node concept="2iRfu4" id="2YtJx69sEXk" role="2iSdaV" />
+        <node concept="3F2HdR" id="2YtJx69sEXb" role="3EZMnx">
+          <ref role="1NtTu8" to="8ny5:2YtJx69sECT" resolve="package" />
+          <node concept="2iRkQZ" id="2YtJx69sEXd" role="2czzBx" />
+        </node>
       </node>
-      <node concept="2iRfu4" id="2GgKIbj$PQb" role="2iSdaV" />
+      <node concept="3F0ifn" id="2YtJx69u1z7" role="3EZMnx" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="2YtJx69sEWN">
+    <property role="3GE5qa" value="header" />
+    <ref role="1XX52x" to="8ny5:2YtJx69sECV" resolve="UsePackage" />
+    <node concept="3EZMnI" id="2YtJx69uggN" role="2wV5jI">
+      <node concept="3F0ifn" id="2YtJx69uggW" role="3EZMnx">
+        <property role="3F0ifm" value="-" />
+      </node>
+      <node concept="2iRfu4" id="2YtJx69uggO" role="2iSdaV" />
+      <node concept="3F0A7n" id="2YtJx69sEWP" role="3EZMnx">
+        <ref role="1NtTu8" to="8ny5:2YtJx69sECW" resolve="package" />
+      </node>
     </node>
   </node>
 </model>

@@ -20,6 +20,7 @@ public final class LanguageConceptSwitch {
   public static final int Table = 8;
   public static final int TableOfContents = 9;
   public static final int UsePackage = 10;
+  public static final int UsePackages = 11;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x968b09380d4f4b45L, 0x9c47d86e2dddb74bL);
@@ -33,7 +34,8 @@ public final class LanguageConceptSwitch {
     builder.put(0xfb8026902f8247dL, Section);
     builder.put(0x53b09c58d92e6634L, Table);
     builder.put(0xfb80269030445caL, TableOfContents);
-    builder.put(0x2b10c2e2d3935d68L, UsePackage);
+    builder.put(0x2f9dbe118972aa3bL, UsePackage);
+    builder.put(0x2b10c2e2d3935d68L, UsePackages);
     myIndex = builder.seal();
   }
 

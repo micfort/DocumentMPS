@@ -23,6 +23,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptTable = createDescriptorForTable();
   /*package*/ final ConceptDescriptor myConceptTableOfContents = createDescriptorForTableOfContents();
   /*package*/ final ConceptDescriptor myConceptUsePackage = createDescriptorForUsePackage();
+  /*package*/ final ConceptDescriptor myConceptUsePackages = createDescriptorForUsePackages();
   private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
@@ -31,7 +32,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptCell, myConceptICanBeReferenced, myConceptImage, myConceptImageFile, myConceptParagraph, myConceptReference, myConceptRow, myConceptSection, myConceptTable, myConceptTableOfContents, myConceptUsePackage);
+    return Arrays.asList(myConceptCell, myConceptICanBeReferenced, myConceptImage, myConceptImageFile, myConceptParagraph, myConceptReference, myConceptRow, myConceptSection, myConceptTable, myConceptTableOfContents, myConceptUsePackage, myConceptUsePackages);
   }
 
   @Override
@@ -60,6 +61,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptTableOfContents;
       case LanguageConceptSwitch.UsePackage:
         return myConceptUsePackage;
+      case LanguageConceptSwitch.UsePackages:
+        return myConceptUsePackages;
       default:
         return null;
     }
@@ -161,12 +164,20 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForUsePackage() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("Document.Basics", "UsePackage", 0x968b09380d4f4b45L, 0x9c47d86e2dddb74bL, 0x2b10c2e2d3935d68L);
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("Document.Basics", "UsePackage", 0x968b09380d4f4b45L, 0x9c47d86e2dddb74bL, 0x2f9dbe118972aa3bL);
+    b.class_(false, false, false);
+    b.origin("r:a5f2ab13-cf5d-43c7-9d28-9c994b0b3d70(Document.Basics.structure)/3431107473655900731");
+    b.version(2);
+    b.prop("package", 0x2f9dbe118972aa3cL, "3431107473655900732");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForUsePackages() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("Document.Basics", "UsePackages", 0x968b09380d4f4b45L, 0x9c47d86e2dddb74bL, 0x2b10c2e2d3935d68L);
     b.class_(false, false, false);
     b.parent(0xe9a610efe9344ec5L, 0xaa3d44f7c7af41d2L, 0x2b10c2e2d38c41b6L);
     b.origin("r:a5f2ab13-cf5d-43c7-9d28-9c994b0b3d70(Document.Basics.structure)/3103194422726319464");
     b.version(2);
-    b.prop("name", 0x2b10c2e2d3935d6bL, "3103194422726319467");
+    b.aggregate("package", 0x2f9dbe118972aa39L).target(0x968b09380d4f4b45L, 0x9c47d86e2dddb74bL, 0x2f9dbe118972aa3bL).optional(true).ordered(true).multiple(true).origin("3431107473655900729").done();
     return b.create();
   }
 }

@@ -36,6 +36,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
         return Collections.<ConceptEditor>singletonList(new TableOfContents_Editor());
       case 8:
         return Collections.<ConceptEditor>singletonList(new UsePackage_Editor());
+      case 9:
+        return Collections.<ConceptEditor>singletonList(new UsePackages_Editor());
       default:
     }
     return Collections.<ConceptEditor>emptyList();
@@ -54,6 +56,6 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     return Collections.<SubstituteMenu>emptyList();
   }
 
-  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x968b09380d4f4b45L, 0x9c47d86e2dddb74bL, 0x53b09c58d92e6638L), MetaIdFactory.conceptId(0x968b09380d4f4b45L, 0x9c47d86e2dddb74bL, 0xfb8026902fb92d0L), MetaIdFactory.conceptId(0x968b09380d4f4b45L, 0x9c47d86e2dddb74bL, 0xfb8026902faad02L), MetaIdFactory.conceptId(0x968b09380d4f4b45L, 0x9c47d86e2dddb74bL, 0x288f85bc880edab1L), MetaIdFactory.conceptId(0x968b09380d4f4b45L, 0x9c47d86e2dddb74bL, 0x53b09c58d92e6637L), MetaIdFactory.conceptId(0x968b09380d4f4b45L, 0x9c47d86e2dddb74bL, 0xfb8026902f8247dL), MetaIdFactory.conceptId(0x968b09380d4f4b45L, 0x9c47d86e2dddb74bL, 0x53b09c58d92e6634L), MetaIdFactory.conceptId(0x968b09380d4f4b45L, 0x9c47d86e2dddb74bL, 0xfb80269030445caL), MetaIdFactory.conceptId(0x968b09380d4f4b45L, 0x9c47d86e2dddb74bL, 0x2b10c2e2d3935d68L)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x968b09380d4f4b45L, 0x9c47d86e2dddb74bL, 0x53b09c58d92e6638L), MetaIdFactory.conceptId(0x968b09380d4f4b45L, 0x9c47d86e2dddb74bL, 0xfb8026902fb92d0L), MetaIdFactory.conceptId(0x968b09380d4f4b45L, 0x9c47d86e2dddb74bL, 0xfb8026902faad02L), MetaIdFactory.conceptId(0x968b09380d4f4b45L, 0x9c47d86e2dddb74bL, 0x288f85bc880edab1L), MetaIdFactory.conceptId(0x968b09380d4f4b45L, 0x9c47d86e2dddb74bL, 0x53b09c58d92e6637L), MetaIdFactory.conceptId(0x968b09380d4f4b45L, 0x9c47d86e2dddb74bL, 0xfb8026902f8247dL), MetaIdFactory.conceptId(0x968b09380d4f4b45L, 0x9c47d86e2dddb74bL, 0x53b09c58d92e6634L), MetaIdFactory.conceptId(0x968b09380d4f4b45L, 0x9c47d86e2dddb74bL, 0xfb80269030445caL), MetaIdFactory.conceptId(0x968b09380d4f4b45L, 0x9c47d86e2dddb74bL, 0x2f9dbe118972aa3bL), MetaIdFactory.conceptId(0x968b09380d4f4b45L, 0x9c47d86e2dddb74bL, 0x2b10c2e2d3935d68L)).seal();
   private static final ConceptSwitchIndex conceptIndex1 = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x968b09380d4f4b45L, 0x9c47d86e2dddb74bL, 0x288f85bc880edab1L)).seal();
 }

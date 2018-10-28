@@ -20,6 +20,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_Table;
   private ConceptPresentation props_TableOfContents;
   private ConceptPresentation props_UsePackage;
+  private ConceptPresentation props_UsePackages;
 
   @Override
   @Nullable
@@ -101,6 +102,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_UsePackage = cpb.create();
         }
         return props_UsePackage;
+      case LanguageConceptSwitch.UsePackages:
+        if (props_UsePackages == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("UsePackages");
+          props_UsePackages = cpb.create();
+        }
+        return props_UsePackages;
     }
     return null;
   }
