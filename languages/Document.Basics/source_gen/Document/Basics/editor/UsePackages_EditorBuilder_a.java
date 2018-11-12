@@ -78,17 +78,17 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     return editorCell;
   }
   private EditorCell createRefNodeList_0() {
-    AbstractCellListHandler handler = new UsePackages_EditorBuilder_a.packageListHandler_kyf1p8_b1a(myNode, getEditorContext());
+    AbstractCellListHandler handler = new UsePackages_EditorBuilder_a.packagesListHandler_kyf1p8_b1a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
-    editorCell.setCellId("refNodeList_package");
+    editorCell.setCellId("refNodeList_packages");
     editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
-  private static class packageListHandler_kyf1p8_b1a extends RefNodeListHandler {
+  private static class packagesListHandler_kyf1p8_b1a extends RefNodeListHandler {
     @NotNull
     private SNode myNode;
 
-    public packageListHandler_kyf1p8_b1a(SNode ownerNode, EditorContext context) {
+    public packagesListHandler_kyf1p8_b1a(SNode ownerNode, EditorContext context) {
       super(context, false);
       myNode = ownerNode;
     }
@@ -98,7 +98,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
       return myNode;
     }
     public SContainmentLink getSLink() {
-      return MetaAdapterFactory.getContainmentLink(0x968b09380d4f4b45L, 0x9c47d86e2dddb74bL, 0x2b10c2e2d3935d68L, 0x2f9dbe118972aa39L, "package");
+      return MetaAdapterFactory.getContainmentLink(0x968b09380d4f4b45L, 0x9c47d86e2dddb74bL, 0x2b10c2e2d3935d68L, 0x2f9dbe118972aa39L, "packages");
     }
     public SAbstractConcept getChildSConcept() {
       return MetaAdapterFactory.getConcept(0x968b09380d4f4b45L, 0x9c47d86e2dddb74bL, 0x2f9dbe118972aa3bL, "Document.Basics.structure.UsePackage");
@@ -113,7 +113,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
     }
     public EditorCell createEmptyCell() {
       getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(packageListHandler_kyf1p8_b1a.this.getNode(), MetaAdapterFactory.getContainmentLink(0x968b09380d4f4b45L, 0x9c47d86e2dddb74bL, 0x2b10c2e2d3935d68L, 0x2f9dbe118972aa39L, "package")));
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(packagesListHandler_kyf1p8_b1a.this.getNode(), MetaAdapterFactory.getContainmentLink(0x968b09380d4f4b45L, 0x9c47d86e2dddb74bL, 0x2b10c2e2d3935d68L, 0x2f9dbe118972aa39L, "packages")));
       try {
         EditorCell emptyCell = null;
         emptyCell = super.createEmptyCell();

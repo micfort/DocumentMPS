@@ -207,7 +207,7 @@
     <node concept="1TJgyj" id="2YtJx69sECT" role="1TKVEi">
       <property role="IQ2ns" value="3431107473655900729" />
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="package" />
+      <property role="20kJfa" value="packages" />
       <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="2YtJx69sECV" resolve="UsePackage" />
     </node>
@@ -222,7 +222,7 @@
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="2YtJx69sECW" role="1TKVEl">
       <property role="IQ2nx" value="3431107473655900732" />
-      <property role="TrG5h" value="package" />
+      <property role="TrG5h" value="name" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>

@@ -168,7 +168,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:a5f2ab13-cf5d-43c7-9d28-9c994b0b3d70(Document.Basics.structure)/3431107473655900731");
     b.version(2);
-    b.prop("package", 0x2f9dbe118972aa3cL, "3431107473655900732");
+    b.prop("name", 0x2f9dbe118972aa3cL, "3431107473655900732");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForUsePackages() {
@@ -177,7 +177,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xe9a610efe9344ec5L, 0xaa3d44f7c7af41d2L, 0x2b10c2e2d38c41b6L);
     b.origin("r:a5f2ab13-cf5d-43c7-9d28-9c994b0b3d70(Document.Basics.structure)/3103194422726319464");
     b.version(2);
-    b.aggregate("package", 0x2f9dbe118972aa39L).target(0x968b09380d4f4b45L, 0x9c47d86e2dddb74bL, 0x2f9dbe118972aa3bL).optional(true).ordered(true).multiple(true).origin("3431107473655900729").done();
+    b.aggregate("packages", 0x2f9dbe118972aa39L).target(0x968b09380d4f4b45L, 0x9c47d86e2dddb74bL, 0x2f9dbe118972aa3bL).optional(true).ordered(true).multiple(true).origin("3431107473655900729").done();
     return b.create();
   }
 }

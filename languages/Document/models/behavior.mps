@@ -154,7 +154,7 @@
                         <ref role="3cqZAo" node="2GgKIbj$3or" resolve="sb" />
                       </node>
                       <node concept="liA8E" id="2GgKIbj$8Ed" role="2OqNvi">
-                        <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.CharSequence):java.lang.StringBuilder" resolve="append" />
+                        <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
                         <node concept="2OqwBi" id="2GgKIbj$8WA" role="37wK5m">
                           <node concept="37vLTw" id="2GgKIbj$8KK" role="2Oq$k0">
                             <ref role="3cqZAo" node="2GgKIbj$7kN" resolve="it" />

@@ -3817,7 +3817,7 @@
             <node concept="liA8E" id="ll" role="2OqNvi">
               <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2.prop(java.lang.String,long,java.lang.String):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2" resolve="prop" />
               <node concept="Xl_RD" id="lm" role="37wK5m">
-                <property role="Xl_RC" value="package" />
+                <property role="Xl_RC" value="name" />
               </node>
               <node concept="1adDum" id="ln" role="37wK5m">
                 <property role="1adDun" value="0x2f9dbe118972aa3cL" />
@@ -3956,7 +3956,7 @@
                         <node concept="liA8E" id="mh" role="2OqNvi">
                           <ref role="37wK5l" to="bzg8:~ConceptDescriptorBuilder2.aggregate(java.lang.String,long):jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2$AggregationLinkBuilder" resolve="aggregate" />
                           <node concept="Xl_RD" id="mi" role="37wK5m">
-                            <property role="Xl_RC" value="package" />
+                            <property role="Xl_RC" value="packages" />
                           </node>
                           <node concept="1adDum" id="mj" role="37wK5m">
                             <property role="1adDun" value="0x2f9dbe118972aa39L" />
